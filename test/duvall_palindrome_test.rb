@@ -16,4 +16,12 @@ class DuvallPalindromeTest < Minitest::Test
   def test_palindrome_with_punctuation
     assert "Madam, I'm Adam.".palindrome?
   end
+
+  def test_integer_not_palindrome
+    refute 12345.palindrome?
+  end
+  def test_integer_palindrome
+    assert 12321.palindrome?
+  end
+
 end

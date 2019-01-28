@@ -1,6 +1,6 @@
 require "duvall_palindrome/version"
 
-  class String
+  module DuvallPalindrome
 
     # Returns true for a palindrome, false otherwise.
     def palindrome?
@@ -11,6 +11,13 @@ require "duvall_palindrome/version"
 
       # Returns content for palindrome testing.
       def processed_content
-        self.scan(/[a-z]/i).join.downcase
+        self.to_s.scan(/[a-z0-9]/i).join.downcase
       end
+  end
+
+  class String
+    include DuvallPalindrome
+  end
+  class Integer
+    include DuvallPalindrome
   end
