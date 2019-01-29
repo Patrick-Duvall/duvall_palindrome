@@ -1,6 +1,10 @@
 require "test_helper"
 
 class DuvallPalindromeTest < Minitest::Test
+  def test_spaces
+    refute "   ".palindrome?
+  end
+
   def test_non_palindrome
     refute "apple".palindrome?
   end
